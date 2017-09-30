@@ -11,6 +11,15 @@ import UIKit
 class CalculatorVC: UIViewController {
 
 	
+	@IBOutlet weak var display: UILabelX!
+	
+	
+	
+	@IBAction func buttonPressed(_ sender: UIButtonX) {
+	//button has been pressed
+	print("\(sender.currentTitle!)")
+		
+	}
 	
 	
 	
