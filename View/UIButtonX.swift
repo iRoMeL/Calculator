@@ -110,7 +110,14 @@ class UIButtonX: UIButton {
             layer.borderColor = borderColor.cgColor
         }
     }
-    
+	
+	@IBInspectable var backColor: UIColor = UIColor.clear{
+		
+		didSet{
+			backgroundColor = backColor
+		}
+		
+	}
     // MARK: - Shadow
     
     @IBInspectable public var shadowOpacity: CGFloat = 0
