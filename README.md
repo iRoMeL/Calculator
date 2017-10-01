@@ -1,2 +1,2 @@
 # Calculator
-Simple clasic iOS 10 style calculator
+Simple classic iOS 10 style calculator
