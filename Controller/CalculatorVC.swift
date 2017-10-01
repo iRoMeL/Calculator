@@ -10,7 +10,7 @@ import UIKit
 
 class CalculatorVC: UIViewController {
 
-	private var typingDigit = false
+	private var userEnteringNumber = false
 	private var brain =  Brain()
 	
 	@IBOutlet weak var display: UILabelX!
@@ -19,12 +19,12 @@ class CalculatorVC: UIViewController {
 	//button has been pressed
 	let digit = sender.currentTitle!
 		
-	   if typingDigit {
+	   if userEnteringNumber {
 			let textInDisplay = display.text!
 			display.text = textInDisplay + digit
 		} else {
 			display.text = digit
-			typingDigit = true
+			userEnteringNumber = true
 		}
 		
 	print("\(digit)")
@@ -38,15 +38,17 @@ class CalculatorVC: UIViewController {
 			return Double(display.text!)!
 		}
 		set{
+			//display.text = NumberFormatter.localizedString(from: NSNumber(value:newValue), number: .decimal)
 			display.text = String(newValue)
+			//display.text = String(format: "%.0f", newValue)
 		}
 	}
 	
 	@IBAction func operationPressed(_ sender: UIButtonX) {
 		
-		if typingDigit {
+		if userEnteringNumber {
 			brain.setOperand(displayValue)
-			typingDigit = false
+			userEnteringNumber = false
 		}
 		
 		if let mathSymbol = sender.currentTitle {

@@ -8,30 +8,51 @@
 
 import Foundation
 
+func factorial(_ n: Double) -> Double {
+	if n == 0 {
+		return 1
+	}
+	else {
+		return n * factorial(n - 1)
+	}
+}
+
 struct Brain {
 	
 	private var accumulator:Double?
+	
 	private enum Operation {
 		case constant(Double) 		//pi,e,
 		case unaryOparation((Double)->Double) 		//√
 		case binaryOperation((Double,Double)-> Double)
 		case equals
+		case clear
 	}
 	
 	
 	
 	private var operations:Dictionary<String,Operation> = [
-	"π"		: Operation.constant(Double.pi), //Double.pi,
-	"e"		: Operation.constant(M_E),
-	"√"		: Operation.unaryOparation(sqrt),
-	"cos"	: Operation.unaryOparation(cos),
-	"sin"	: Operation.unaryOparation(sin),
-	"±"		: Operation.unaryOparation({-$0}),
-	"+"		: Operation.binaryOperation({$0 + $1}),
-	"−"		: Operation.binaryOperation({$0	- $1}),
-	"÷"		: Operation.binaryOperation({$0	/ $1}),
-	"×"		: Operation.binaryOperation({$0	* $1}),
-	"="		: Operation.equals
+	"π"		: .constant(Double.pi), //Double.pi,
+	"e"		: .constant(M_E),
+	"√"		: .unaryOparation(sqrt),
+	"cos"	: .unaryOparation(cos),
+	"sin"	: .unaryOparation(sin),
+	"sinh"	: .unaryOparation(sinh),
+	"cosh"	: .unaryOparation(cosh),
+	"tan"	: .unaryOparation(tan),
+	"tanh"	: .unaryOparation(tanh),
+	"x!"	: .unaryOparation(factorial),
+	"x²" 	: .unaryOparation({ pow($0, 2) }),
+	"x³" 	: .unaryOparation({ pow($0, 3) }),
+	"eˣ"		: .unaryOparation(exp),
+	"xʸ"		: .binaryOperation(pow),
+	"±"		: .unaryOparation({-$0}),
+	"+"		: .binaryOperation({$0 + $1}),
+	"−"		: .binaryOperation({$0	- $1}),
+	"÷"		: .binaryOperation({$0	/ $1}),
+	"×"		: .binaryOperation({$0	* $1}),
+	"="		: .equals,
+	"AC"	: .clear
 	]
 	
 	mutating func performOperation(_ symbol :String) {
@@ -52,6 +73,8 @@ struct Brain {
 				}
 			case .equals:
 				performPendingBinaryOperation()
+			case .clear:
+				clear()
 			}
 			
 		}
@@ -90,6 +113,12 @@ struct Brain {
 		get{
 			return accumulator
 		}
+	}
+	
+	mutating func clear() {
+		accumulator = 0
+		pbo = nil
+		
 	}
 	
 	
