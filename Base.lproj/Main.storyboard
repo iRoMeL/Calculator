@@ -46,18 +46,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="display" destination="vmL-Zh-GlA" id="5u1-Wf-DA7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391.75412293853077" y="80.799999999999997"/>
         </scene>
-        <!--Input Controller-->
+        <!--Output Controller-->
         <scene sceneID="fU3-Wd-vAR">
             <objects>
-                <viewController id="1LF-gy-GiU" customClass="InputController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1LF-gy-GiU" customClass="OutputController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rGb-Rh-TRk">
                         <rect key="frame" x="0.0" y="0.0" width="724" height="59.333333333333336"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +76,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qgK-lZ-J5G"/>
                     </view>
+                    <connections>
+                        <outlet property="display" destination="vmL-Zh-GlA" id="aVb-cG-o3M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="va2-qB-ofu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,6 +189,9 @@
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="8tx-Yc-Qwj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -295,6 +298,9 @@
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="nGF-jp-Tz6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -401,6 +407,9 @@
                                                 <state key="normal" title="−">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="9lx-e1-pea"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -523,6 +532,9 @@
                                                         <real key="value" value="0.5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="xCy-Js-jzs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -621,6 +633,9 @@
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="aeb-ew-KWw"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -642,6 +657,9 @@
                                                         <state key="normal" title="=">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="QtF-Rm-v9M"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -659,6 +677,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wQA-Uf-DNX"/>
                     </view>
+                    <connections>
+                        <outlet property="point" destination="iMQ-F5-tVx" id="Jho-th-76g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5u-eV-dQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

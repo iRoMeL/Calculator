@@ -24,6 +24,8 @@ protocol Input {
 
 protocol Output {
 	func output(value: String)
+	var displayValue:String {get set}
+	
 }
 
 protocol Model {
@@ -36,7 +38,9 @@ protocol Model {
 
 class Brain: Model {
 	
-	let output: Output
+	var output: Output
+	
+	private var userEnteringNumber = false
 	
 	var operandOne: Double?
 	var operandTwo: Double?
@@ -54,24 +58,65 @@ class Brain: Model {
 			switch self.operation! {
 				case .pls: result = (operandOne ?? 0.0) + (operandTwo ?? 0.0)
 				case .min: result = (operandOne ?? 0.0) - (operandTwo ?? 0.0)
+				case .div: result = (operandOne ?? 0.0) / (operandTwo ?? 0.0)
+				case .mul: result = (operandOne ?? 0.0) * (operandTwo ?? 0.0)
 				
 			default: break
 			}
 			
 			if let result = result {
-				output.output(value: "\(result)")
+				//output.output(value: "\(result)")
+				output.displayValue = String(result)
+				operandOne = result
+				operandTwo = nil
 			}
 		} else {
 			self.operation = operation
 		}
+		userEnteringNumber = false
 	}
 	
 	func input(number: Double) {
+		
+		//if (number == "0") && (display.text == "0") { return }
+		//		if (digit != ".") && (display.text == "0") { display.text = digit ; return }
+		//		if (digit == ".") && (display.text?.characters.contains("."))! { return }
+		//
+		if userEnteringNumber {
+		let textInDisplay = output.displayValue
+		
+				output.displayValue = (String(textInDisplay) + String(number))
+				} else {
+					output.displayValue = String(number)
+					userEnteringNumber = true
+				}
+	
 		if operandOne == nil {
 			operandOne = number
 		} else if operandTwo == nil {
 			operandTwo = number
 		}
 	}
+}
+
+struct Formatter {
+	private static let format: NumberFormatter = {
+		let format = NumberFormatter()
+		format.numberStyle = .decimal
+		format.notANumberSymbol = "Err"
+		return format
+	}()
+	
+	static var separator: String? {
+		return format.decimalSeparator
+	}
+	
+	static func toDouble(value: String?) -> Double? {
+		return value == nil ? nil : format.number(from: value!)?.doubleValue
+	}
+	
+	//static func toString(value: Double?) -> String? {
+	//	return value == nil ? nil : format.string(from: NSNumber(value!))
+	//}
 }
 

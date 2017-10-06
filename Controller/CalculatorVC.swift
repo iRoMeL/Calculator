@@ -9,7 +9,35 @@
 import UIKit
 
 class CalculatorVC: UIViewController {
+	
+	var outputVC : Output!
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		outputVC.output(value: "0")
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+	
+	if let destVC = segue.destination as? OutputController {
+		outputVC = destVC
+	}
+		
+	if  let destVC = segue.destination as? InputController {
+		
+		destVC.model = Brain(with: outputVC)
+		
+	}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 //	private var userEnteringNumber = false
 //	private var brain =  Brain()
 //
@@ -76,14 +104,7 @@ class CalculatorVC: UIViewController {
 	
 	
 	
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		
-		
-		
-	}
+
 
 
 }

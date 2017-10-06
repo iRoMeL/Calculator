@@ -8,58 +8,54 @@
 
 import UIKit
 
-class InputController: UIViewController {
+class InputController: UIViewController,Input {
 	
-	//let model: Model!
+	var model:Brain!
+	
+	
+	@IBOutlet weak var point: UIButton!
 	
 
+	func enter(value: String) {
+		
+		switch value {
+		case "1": model.input(number: Double(value)!)
+		case "2": model.input(number: Double(value)!)
+		case "3": model.input(number: Double(value)!)
+		case "4": model.input(number: Double(value)!)
+		case "5": model.input(number: Double(value)!)
+		case "6": model.input(number: Double(value)!)
+		case "7": model.input(number: Double(value)!)
+		case "8": model.input(number: Double(value)!)
+		case "9": model.input(number: Double(value)!)
+		case "0": model.input(number: Double(value)!)
+			
+		case "+": model.input(operation: .pls)
+		case "-": model.input(operation: .min)
+		case "÷": model.input(operation: .div)
+		case "×": model.input(operation: .mul)
+		case "=": model.input(operation: .equal)
+		default: break
+		}
+	}
+	
 
-	
-	
 	private var userEnteringNumber = false
 	
 	@IBAction func digitPressed(_ sender: UIButton) {
 		
-		//let digit = sender.currentTitle!
+		let digit = sender.currentTitle!
 		
-//		if userEnteringNumber {
-//
-//			//забираєм нулі
-//			if (digit == "0") && (display.text == "0") { return }
-//			if (digit != ".") && (display.text == "0") { display.text = digit ; return }
-//			if (digit == ".") && (display.text?.characters.contains("."))! { return }
-//
-//			let textInDisplay = display.text!
-//			display.text = textInDisplay + digit
-//		} else {
-//			display.text = digit
-//			userEnteringNumber = true
-//		}
-//
-//		print("\(digit)")
+		enter(value: digit)
 		
-		
-		
+	
 	}
 	
-//	func enter(value: String) {
-//
-//		switch value {
-//		case "1": model.input(number: Double(value)!)
-//		case "+": model.input(operation: .pls)
-//		case "-": model.input(operation: .min)
-//		case "=": model.input(operation: .equal)
-//		default: break
-//		}
-//	}
-	
-	
-	
-	
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-	
+		point.setTitle(Formatter.separator, for: .normal)
 		
 		//self.model = Brain()
         // Do any additional setup after loading the view.
@@ -70,32 +66,5 @@ class InputController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-	
-	
-	//var model: Model
-	
-	//init(with model: Model) {
-	//	self.model = model
-	//}
-	
-//	func enter(value: String) {
-//		switch value {
-//		case "1": model.input(number: Double(value)!)
-//		case "+": model.input(operation: .pls)
-//		case "-": model.input(operation: .min)
-//		case "=": model.input(operation: .equal)
-//		default: break
-//		}
-//	}
 
 }
