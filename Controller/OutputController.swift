@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OutputController: UIViewController,Output {
+class OutputController: UIViewController {
 	
 	
 

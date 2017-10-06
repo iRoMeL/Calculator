@@ -10,25 +10,25 @@ import UIKit
 
 class CalculatorVC: UIViewController {
 	
-	var outputVC : Output!
+	//var outputVC : Output!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		outputVC.output(value: "0")
+		//outputVC.output(value: "0")
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
 	
-	if let destVC = segue.destination as? OutputController {
-		outputVC = destVC
-	}
+//	if let destVC = segue.destination as? OutputController {
+	//	outputVC = destVC
+	//}
 		
-	if  let destVC = segue.destination as? InputController {
+//	if  let destVC = segue.destination as? InputController {
 		
-		destVC.model = Brain(with: outputVC)
+//		destVC.model = Brain(with: outputVC)
 		
-	}
+//	}
 		
 	}
 	
