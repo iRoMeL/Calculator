@@ -10,27 +10,40 @@ import UIKit
 
 class CalculatorVC: UIViewController {
 	
-	//var outputVC : Output!
+
+	var input:InputInterface!
+	var output:OutputInterface!
+	private var brain:CalculatorBrain!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//outputVC.output(value: "0")
+		
+		brain = CalculatorBrain(resultClosure: { (result, error) in
+		
+		if result != nil {
+				self.output.display(result!.description)
+		}
+			
+	
+		})
+		
+		output.display("777")
+		
 	}
 	
+	
+	//MARK Seque
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
-	
-//	if let destVC = segue.destination as? OutputController {
-	//	outputVC = destVC
-	//}
+		if let destVC = segue.destination as? OutputController {
+			output = destVC
+		}
 		
-//	if  let destVC = segue.destination as? InputController {
+		if  let destVC = segue.destination as? InputController {
+			input = destVC
+		}
 		
-//		destVC.model = Brain(with: outputVC)
-		
-//	}
-		
-	}
+}
 	
 	
 	

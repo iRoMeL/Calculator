@@ -70,7 +70,7 @@ protocol OutputInterface {
 }
 
 protocol CalculatorInterface {
-    func digit(_ value: Double)
+    mutating func digit(_ value: Double)
     func operation(_ operation: Operation)
     func function(_ function: Function)
     func memory(_ memory: Memory)

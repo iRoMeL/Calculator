@@ -10,7 +10,7 @@ import UIKit
 
 class InputController: UIViewController,InputInterface {
 	
-	private var brain:CalculatorBrain!
+	
 	private var userEnteringNumber = false
 	
 	@IBOutlet weak var point: UIButton!
