@@ -71,9 +71,17 @@ protocol OutputInterface {
 
 protocol CalculatorInterface {
 	mutating func digit(_ value: Double)
-	func operation(_ operation: Operation)
+	mutating func operation(_ operation: Operation)
 	func function(_ function: Function)
 	func memory(_ memory: Memory)
 	func utility(_ utility: Utility)
 	var resultClosure: ((Double?, Error?) -> Void) { get set }
 }
+
+extension Double {
+	var clean: String {
+		return self.truncatingRemainder(dividingBy: 1) == 0 ?
+			String(format: "%.0f", self) : String(self)
+	}
+}
+

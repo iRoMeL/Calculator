@@ -165,6 +165,9 @@
                                                 <state key="normal" title="AC">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="WGy-OR-2Cb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-X8-4fh">
                                                 <rect key="frame" x="516" y="0.0" width="72.666666666666629" height="68"/>
@@ -173,6 +176,9 @@
                                                 <state key="normal" title="±">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="NqX-3F-m9d"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rru-zp-V2z">
                                                 <rect key="frame" x="589.66666666666663" y="0.0" width="72.666666666666742" height="68"/>
@@ -181,6 +187,9 @@
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="poN-x7-igK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq9-ev-O0x">
                                                 <rect key="frame" x="663.33333333333348" y="0.0" width="72.666666666666629" height="68"/>
@@ -190,7 +199,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="8tx-Yc-Qwj"/>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="5CP-PE-ScW"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -299,7 +308,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="nGF-jp-Tz6"/>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="egb-UI-dUP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -408,7 +417,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="9lx-e1-pea"/>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gNY-Yp-4rM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -533,7 +542,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="xCy-Js-jzs"/>
+                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="8Bt-Eo-lph"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -649,6 +658,9 @@
                                                         <state key="normal" title=".">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="zv2-g8-I0m"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXM-VP-rHK">
                                                         <rect key="frame" x="73.666666666666742" y="0.0" width="72.666666666666629" height="68"/>
@@ -658,7 +670,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="QtF-Rm-v9M"/>
+                                                            <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="ohj-Kl-gmP"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

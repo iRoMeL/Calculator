@@ -7,34 +7,49 @@
 //
 
 import UIKit
+import AVFoundation
 
 class InputController: UIViewController,InputInterface {
 	
-	
-	private var userEnteringNumber = false
+	var mainController: CalculatorVC!
 	
 	@IBOutlet weak var point: UIButton!
 	
 	@IBAction func digitPressed(_ sender: UIButton) {
 		
-		let digit = sender.currentTitle!
+		playClick()
 		
-		symbolPressed(digit)
-		
+		symbolPressed(sender.currentTitle!)
 		
 	}
 	
-	func symbolPressed(_ symbol: String) {
-		print(symbol)
+	@IBAction func operationPressed(_ sender: UIButton) {
+		
+		playClick()
+		
+		utilityPressed(sender.currentTitle!)
 	}
+	
+	
+	
+	
+	private func playClick() {
+		AudioServicesPlaySystemSound(1104)
+	}
+	
+	func symbolPressed(_ symbol: String) {
+		mainController.symbolPressed(symbol)
+	}
+	
+	func utilityPressed(_ symbol: String) {
+		mainController.utilityPressed(symbol)
+	}
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//point.setTitle(Formatter.separator, for: .normal)
 		
-		//self.model = Brain()
-		// Do any additional setup after loading the view.
 	}
 	
 	
