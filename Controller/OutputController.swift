@@ -20,16 +20,16 @@ class OutputController: UIViewController,OutputInterface {
 		
 		get{
 			return display.text!
-			}
+		}
 		set{
 			display.text = newValue.description
-			}
+		}
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+	}
 	
-
+	
 }

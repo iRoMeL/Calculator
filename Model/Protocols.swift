@@ -17,63 +17,63 @@
 // MARK: Operations
 
 enum Operation: String {
-    case plus  = "+"
-    case minus = "-"
-    case mult  = "x"
-    case div   = "/"
-    case exp   = "^"
-    case equal = "="
+	case plus  = "+"
+	case minus = "-"
+	case mult  = "x"
+	case div   = "/"
+	case exp   = "^"
+	case equal = "="
 }
 
 enum Function: String {
-    case sqrt    = "√"
-    case sin     = "sin"
-    case cos     = "cos"
-    case tan     = "tan"
-    case sinh    = "sinh"
-    case cosh    = "cosh"
-    case tanh    = "tanh"
-    case ln      = "ln"
-    case log     = "log"
-    case fact    = "x!"
-    case percent = "%"
-    case sign    = "+/-"
+	case sqrt    = "√"
+	case sin     = "sin"
+	case cos     = "cos"
+	case tan     = "tan"
+	case sinh    = "sinh"
+	case cosh    = "cosh"
+	case tanh    = "tanh"
+	case ln      = "ln"
+	case log     = "log"
+	case fact    = "x!"
+	case percent = "%"
+	case sign    = "+/-"
 }
 
 enum Memory: String {
-    case memoryClean  = "mc"
-    case memoryAdd    = "m+"
-    case memoryRemove = "m-"
-    case clean        = "C"
-    case allClean     = "AC"
+	case memoryClean  = "mc"
+	case memoryAdd    = "m+"
+	case memoryRemove = "m-"
+	case clean        = "C"
+	case allClean     = "AC"
 }
 
 enum Utility: String {
-    case dot          = "."
-    case leftBracket  = "("
-    case rightBracket = ")"
+	case dot          = "."
+	case leftBracket  = "("
+	case rightBracket = ")"
 }
 
 enum Constants: String {
-    case pi = "π"
-    case e  = "e"
+	case pi = "π"
+	case e  = "e"
 }
 
 // MARK: Protocols
 
 protocol InputInterface {
-    func symbolPressed(_ symbol: String)
+	func symbolPressed(_ symbol: String)
 }
 
 protocol OutputInterface {
-    func display(_ result: String)
+	func display(_ result: String)
 }
 
 protocol CalculatorInterface {
-    mutating func digit(_ value: Double)
-    func operation(_ operation: Operation)
-    func function(_ function: Function)
-    func memory(_ memory: Memory)
-    func utility(_ utility: Utility)
-    var resultClosure: ((Double?, Error?) -> Void) { get set }
+	mutating func digit(_ value: Double)
+	func operation(_ operation: Operation)
+	func function(_ function: Function)
+	func memory(_ memory: Memory)
+	func utility(_ utility: Utility)
+	var resultClosure: ((Double?, Error?) -> Void) { get set }
 }

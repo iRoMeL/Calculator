@@ -21,21 +21,21 @@ class InputController: UIViewController,InputInterface {
 		
 		symbolPressed(digit)
 		
-	
+		
 	}
 	
 	func symbolPressed(_ symbol: String) {
 		print(symbol)
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		//point.setTitle(Formatter.separator, for: .normal)
 		
 		//self.model = Brain()
-        // Do any additional setup after loading the view.
-    }
-
+		// Do any additional setup after loading the view.
+	}
+	
 	
 }
