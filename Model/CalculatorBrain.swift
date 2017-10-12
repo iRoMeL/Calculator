@@ -8,53 +8,68 @@
 
 import Foundation
 
-struct CalculatorBrain:CalculatorInterface {
+
+class CalculatorBrain:CalculatorInterface {
 	
-	var equation: String //вираз для розрахунку
+	var equation: String 		= "0" //вираз для розрахунку
+	var inputStack:[String] {
+		
+		get {
+			
+		}
+		
+		set {
+			equation = inputStack.map(self + " ")
+		}
+	}
 	
 	private let opa = [
-		"^": (prec: 4, rAssoc: true),
-		"sin": (prec: 5, rAssoc: true),
-		"x": (prec: 3, rAssoc: false),
-		"/": (prec: 3, rAssoc: false),
-		"+": (prec: 2, rAssoc: false),
-		"-": (prec: 2, rAssoc: false),
+		"^"		: (prec: 4, rAssoc: true),
+		"sin"	: (prec: 5, rAssoc: true),
+		"x"		: (prec: 3, rAssoc: false),
+		"/"		: (prec: 3, rAssoc: false),
+		"+"		: (prec: 2, rAssoc: false),
+		"-"		: (prec: 2, rAssoc: false),
 		]
 	
+	init(resultClosure:@escaping ((Double?, Error?) ->Void) ) {
+		self.resultClosure = resultClosure
+	}
 	
 	
-	mutating func digit(_ value: Double) {
+	func digit(_ value: Double) {
 		
 		equation  += " " + String(value)
-		let a = calculate(equation: equation)
-		resultClosure(a,nil)
-		print(a.clean)
-	}
-	
-	mutating func operation(_ operation: Operation) {
-	
-		equation  += " " + String(operation.rawValue)
-		let a = calculate(equation: equation)
-		resultClosure(a,nil)
-		print(a.clean)
+		resultClosure(calculate(),nil)
 		
 	}
 	
-	mutating func equal()  {
-		let a = calculate(equation: equation)
-		resultClosure(a,nil)
-		equation = String(a)
-		print(a.clean)
+   func operation(_ operation: Operation) {
+	
+		equation  += " " + String(operation.rawValue)
+		resultClosure(calculate(),nil)
+	
 	}
 	
-	mutating func clear() {
-		equation = "0"
+    func equal()  {
+		
+		let result  = calculate()
+		//перевірки
+		
+		equation = String(result)
+		resultClosure(result,nil)
+		
+	}
+	
+    func clear() {
+		equation 		= ""
 		resultClosure(0,nil)
 	}
 	
 	
 	func function(_ function: Function) {
-		
+		equation  += " " + String(function.rawValue)
+		resultClosure(calculate(),nil)
 	}
 	
 	func memory(_ memory: Memory) {
@@ -62,6 +77,11 @@ struct CalculatorBrain:CalculatorInterface {
 	}
 	
 	func utility(_ utility: Utility) {
+	
+		//case dot          = "."
+		//case leftBracket  = "("
+		//case rightBracket = ")"
+		
 		
 	}
 	
@@ -115,7 +135,7 @@ struct CalculatorBrain:CalculatorInterface {
 	
 	
 	
-	func calculate(  equation: String ) -> Double {
+	func calculate() -> Double {
 		let tokens = rpn(tokens: parseInfix(e: equation )) // array for input symbols
 		var stack = [String]()
 		

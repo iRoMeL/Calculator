@@ -14,8 +14,7 @@
 // (o) 8. Graphics of Function.sin, Function.cos, Function.tan (using CoreGraphics)
 
 
-// MARK: Operations
-
+// MARK: Enums
 enum Operation: String {
 	case plus  = "+"
 	case minus = "-"
@@ -66,7 +65,13 @@ protocol InputInterface {
 }
 
 protocol OutputInterface {
+	var displayValue:String{get set}
+	
 	func display(_ result: String)
+}
+
+protocol CalculatorDelegate {
+	func input(_ symbol:String)
 }
 
 protocol CalculatorInterface {
@@ -78,6 +83,7 @@ protocol CalculatorInterface {
 	var resultClosure: ((Double?, Error?) -> Void) { get set }
 }
 
+// MARK: Extensions
 extension Double {
 	var clean: String {
 		return self.truncatingRemainder(dividingBy: 1) == 0 ?

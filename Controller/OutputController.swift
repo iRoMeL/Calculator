@@ -10,6 +10,7 @@ import UIKit
 
 class OutputController: UIViewController,OutputInterface {
 	
+	
 	func display(_ result: String) {
 		display.text = result
 	}

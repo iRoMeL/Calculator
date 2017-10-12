@@ -11,7 +11,7 @@ import AVFoundation
 
 class InputController: UIViewController,InputInterface {
 	
-	var mainController: CalculatorVC!
+	var delegate: CalculatorVC!
 	
 	@IBOutlet weak var point: UIButton!
 	
@@ -38,11 +38,11 @@ class InputController: UIViewController,InputInterface {
 	}
 	
 	func symbolPressed(_ symbol: String) {
-		mainController.symbolPressed(symbol)
+		delegate.symbolPressed(symbol)
 	}
 	
 	func utilityPressed(_ symbol: String) {
-		mainController.utilityPressed(symbol)
+		delegate.utilityPressed(symbol)
 	}
 	
 	
