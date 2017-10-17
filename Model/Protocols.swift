@@ -12,7 +12,9 @@
 // (o) 6. Additional panel with functions in landscape. Implement using Size Classes
 // (*) 7. Add animation on button press (using CoreAnimation)
 // (o) 8. Graphics of Function.sin, Function.cos, Function.tan (using CoreGraphics)
+import Foundation
 
+let numbers : Set<String> = ["0","1","2","3","4","5","6","7","8","9"]
 
 // MARK: Enums
 enum Operation: String {
@@ -37,6 +39,14 @@ enum Function: String {
 	case fact    = "x!"
 	case percent = "%"
 	case sign    = "+/-"
+	case x_1     = "1/x"
+	case x2      = "x²"
+	case x3      = "x³"
+	case xy      = "xʸ"
+	case ex      = "eˣ"
+	case x10      = "10ˣ"
+	case y_root_x = "ʸ√x"
+	
 }
 
 enum Memory: String {
@@ -48,7 +58,7 @@ enum Memory: String {
 }
 
 enum Utility: String {
-	case dot          = "."
+	//case dot          = "."
 	case leftBracket  = "("
 	case rightBracket = ")"
 }
@@ -65,8 +75,7 @@ protocol InputInterface {
 }
 
 protocol OutputInterface {
-	var displayValue:String{get set}
-	
+	var  displayValue:String{get set}
 	func display(_ result: String)
 }
 
@@ -75,10 +84,10 @@ protocol CalculatorDelegate {
 }
 
 protocol CalculatorInterface {
-	mutating func digit(_ value: Double)
-	mutating func operation(_ operation: Operation)
+	func digit(_ value: Double)
+	func operation(_ operation: Operation)
 	func function(_ function: Function)
-	func memory(_ memory: Memory)
+	func memory(_ memory: Memory, _ number: Double?)
 	func utility(_ utility: Utility)
 	var resultClosure: ((Double?, Error?) -> Void) { get set }
 }
@@ -88,6 +97,12 @@ extension Double {
 	var clean: String {
 		return self.truncatingRemainder(dividingBy: 1) == 0 ?
 			String(format: "%.0f", self) : String(self)
+	}
+
+	private static let arc4randomMax = Double(UInt32.max)
+	
+	static func random0to1() -> Double {
+		return Double(arc4random()) / arc4randomMax
 	}
 }
 

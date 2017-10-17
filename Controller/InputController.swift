@@ -11,41 +11,32 @@ import AVFoundation
 
 class InputController: UIViewController,InputInterface {
 	
-	var delegate: CalculatorVC!
+	var delegate: CalculatorDelegate!
 	
 	@IBOutlet weak var point: UIButton!
 	
-	@IBAction func digitPressed(_ sender: UIButton) {
+	@IBAction func buttonPressed(_ sender: UIButton) {
+		
+		//animation
+		sender.titleLabel?.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+		UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: {
+			[sender] in sender.titleLabel?.transform = CGAffineTransform.identity
+		}, completion: nil)
 		
 		playClick()
-		
 		symbolPressed(sender.currentTitle!)
 		
 	}
-	
-	@IBAction func operationPressed(_ sender: UIButton) {
-		
-		playClick()
-		
-		utilityPressed(sender.currentTitle!)
-	}
-	
-	
-	
 	
 	private func playClick() {
 		AudioServicesPlaySystemSound(1104)
 	}
 	
 	func symbolPressed(_ symbol: String) {
-		delegate.symbolPressed(symbol)
+		delegate.input(symbol)
 	}
 	
-	func utilityPressed(_ symbol: String) {
-		delegate.utilityPressed(symbol)
-	}
-	
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		

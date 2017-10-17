@@ -10,26 +10,54 @@ import Foundation
 
 
 class CalculatorBrain:CalculatorInterface {
+
 	
-	var equation: String 		= "0" //вираз для розрахунку
-	var inputStack:[String] {
+	
+	private var equation: String 		= "0" //вираз для розрахунку
+	private var braketMode:Bool			=  false
+    private var memory:Double?
+	
+	
+	private var inputStack = [""] {
 		
-		get {
+		didSet {
+			for (index, value) in inputStack.enumerated() {
+				if index == 0 {
+					equation = "" + value
+				} else {
+					equation += " " + value
+				}
+			}
 			
-		}
-		
-		set {
-			equation = inputStack.map(self + " ")
+			print(equation)
 		}
 	}
+	
+	
 	
 	private let opa = [
 		"^"		: (prec: 4, rAssoc: true),
 		"sin"	: (prec: 5, rAssoc: true),
+		"cos"	: (prec: 5, rAssoc: true),
+		"tan"	: (prec: 5, rAssoc: true),
+		"sinh"	: (prec: 5, rAssoc: true),
+		"cosh"	: (prec: 5, rAssoc: true),
+		"tanh"	: (prec: 5, rAssoc: true),
 		"x"		: (prec: 3, rAssoc: false),
 		"/"		: (prec: 3, rAssoc: false),
+		"1/x"	: (prec: 5, rAssoc: true),
+		"x²"	: (prec: 5, rAssoc: true),
+		"x!"	: (prec: 5, rAssoc: true),
+		"x³"	: (prec: 5, rAssoc: true),
+		"eˣ"		: (prec: 5, rAssoc: true),
+		"xʸ"		: (prec: 4, rAssoc: true),
+		"10ˣ"	: (prec: 5, rAssoc: true),
+		"ʸ√x"	: (prec: 5, rAssoc: true),
+		"ln"	: (prec: 5, rAssoc: true),
+		"log₁₀"	: (prec: 5, rAssoc: true),
 		"+"		: (prec: 2, rAssoc: false),
 		"-"		: (prec: 2, rAssoc: false),
+	
 		]
 	
 	init(resultClosure:@escaping ((Double?, Error?) ->Void) ) {
@@ -38,50 +66,83 @@ class CalculatorBrain:CalculatorInterface {
 	
 	
 	func digit(_ value: Double) {
-		
-		equation  += " " + String(value)
-		resultClosure(calculate(),nil)
+		inputStack.append(String(value))
+		if !braketMode {
+			resultClosure(calculate(),nil)
+		}
 		
 	}
 	
-   func operation(_ operation: Operation) {
-	
-		equation  += " " + String(operation.rawValue)
-		resultClosure(calculate(),nil)
-	
+	func operation(_ operation: Operation) {
+		
+		inputStack.append(String(operation.rawValue))
+		
+		if !braketMode {
+		//	resultClosure(calculate(),nil)
+		}
+
 	}
 	
     func equal()  {
 		
 		let result  = calculate()
-		//перевірки
 		
-		equation = String(result)
+		//потрібні перевірки
+		
+		braketMode = false
+
+		inputStack.removeAll()
+		inputStack.append(String(result))
 		resultClosure(result,nil)
 		
 	}
 	
-    func clear() {
+   private func clear() {
 		equation 		= ""
+		inputStack.removeAll()
 		resultClosure(0,nil)
+		braketMode 		= false
 	}
 	
 	
 	func function(_ function: Function) {
-		equation  += " " + String(function.rawValue)
+		
+		inputStack.append(String(function.rawValue))
+		
+		if !braketMode {
 		resultClosure(calculate(),nil)
+		}
+		
+	
+		
 	}
 	
-	func memory(_ memory: Memory) {
+	func memory(_ mem: Memory, _ number: Double?) {
+		
+		switch mem {
+		case .allClean,.clean:
+			clear()
+			
+		case .memoryAdd:
+			//
+			if number != nil {
+				memory = number
+			}
+			
+		case .memoryRemove:
+			if let m = memory {
+				digit(m)
+			}
+		case .memoryClean:
+			memory = nil
+		}
 		
 	}
 	
 	func utility(_ utility: Utility) {
-	
-		//case dot          = "."
-		//case leftBracket  = "("
-		//case rightBracket = ")"
 		
+		inputStack.append(String(utility.rawValue))
+		braketMode = true
 		
 	}
 	
@@ -139,13 +200,34 @@ class CalculatorBrain:CalculatorInterface {
 		let tokens = rpn(tokens: parseInfix(e: equation )) // array for input symbols
 		var stack = [String]()
 		
+		print("rpn - \(tokens) ")
+		
 		for token in tokens {
 			
 			if Double(token) != nil  {
 				stack += [token] // if symbol is number  - add to stack
 				
-			} else if !stack.isEmpty && (token == Function.sin.rawValue || token == Function.cos.rawValue || token == Function.ln.rawValue || token == Function.sqrt.rawValue) {
-				if let operand = Double((stack.removeLast())) {
+			} else if !stack.isEmpty &&
+				(token == Function.sin.rawValue
+					|| token == Function.cos.rawValue
+					|| token == Function.ln.rawValue
+					|| token == Function.sqrt.rawValue
+					|| token == Function.tan.rawValue
+					|| token == Function.sinh.rawValue
+					|| token == Function.cosh.rawValue
+					|| token == Function.tanh.rawValue
+					|| token == Function.x_1.rawValue
+					|| token == Function.x2.rawValue
+					|| token == Function.x3.rawValue
+					|| token == Function.log.rawValue
+					|| token == Function.fact.rawValue
+					|| token == Function.x10.rawValue
+					|| token == Function.ex.rawValue
+					|| token == Function.fact.rawValue
+					
+					
+				) {
+				if let  operand = Double((stack.removeLast())) {
 					switch token {
 					case Function.sin.rawValue:
 						stack += [String(sin(operand))]
@@ -153,8 +235,36 @@ class CalculatorBrain:CalculatorInterface {
 						stack += [String(cos(operand))]
 					case Function.ln.rawValue:
 						stack += [String(log(operand))]
+					case Function.log.rawValue:
+						stack += [String(log10(operand))]
 					case Function.sqrt.rawValue:
 						stack += [String(sqrt(operand))]
+					case Function.tan.rawValue:
+						stack += [String(tan(operand))]
+					case Function.sinh.rawValue:
+						stack += [String(sinh(operand))]
+					case Function.cosh.rawValue:
+						stack += [String(cosh(operand))]
+					case Function.tanh.rawValue:
+						stack += [String(tanh(operand))]
+					case Function.x_1.rawValue:
+						if operand != 0 {
+							stack += [String( pow(operand, -1))]
+						}
+					case Function.x2.rawValue:
+						stack += [String( pow(operand, 2))]
+					case Function.x3.rawValue:
+						stack += [String( pow(operand, 3))]
+					case Function.x10.rawValue:
+						stack += [String( pow(10, operand))]
+					case Function.ex.rawValue:
+						stack += [String( pow(M_E, operand))]
+					case Function.fact.rawValue:
+						
+						let int_number = Int(operand)
+						stack += [String( factorial(int_number))]
+						
+						
 					default:
 						break
 					}
@@ -168,11 +278,25 @@ class CalculatorBrain:CalculatorInterface {
 						case Operation.minus.rawValue:
 							stack += [String(firstOperand - secondOperand)]
 						case Operation.div.rawValue:
-							stack += [String(firstOperand / secondOperand)]
+							if secondOperand != 0.0 {
+								stack += [String(firstOperand / secondOperand)]
+							} else {
+								stack += [String(0.0)]
+							}
+							
 						case Operation.mult.rawValue:
 							stack += [String(firstOperand * secondOperand)]
 						case Operation.exp.rawValue:
 							stack += [String(pow(firstOperand,secondOperand))]
+						case Function.xy.rawValue:
+							stack += [String(pow(firstOperand,secondOperand))]
+						case Function.y_root_x.rawValue:
+							if secondOperand != 0.0 {
+								stack += [String(pow(firstOperand,-secondOperand))]
+							} else {
+								stack += [String(0.0)]
+							}
+							
 						default:
 							break
 						}
@@ -183,10 +307,21 @@ class CalculatorBrain:CalculatorInterface {
 				
 			}
 		}
+		if !stack.isEmpty {
+			return Double(stack.removeLast())!
+		} else {
+			return 0
+		}
 		
-		return Double(stack.removeLast())!
 	}
 	
-	
+	private func factorial(_ n: Int) -> Int {
+		if n == 0 {
+			return 1
+		}
+		else {
+			return n * factorial(n - 1)
+		}
+	}
 	
 }

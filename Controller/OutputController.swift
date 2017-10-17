@@ -10,11 +10,6 @@ import UIKit
 
 class OutputController: UIViewController,OutputInterface {
 	
-	
-	func display(_ result: String) {
-		display.text = result
-	}
-	
 	@IBOutlet weak var display: UILabel!
 	
 	var displayValue:String {
@@ -23,13 +18,12 @@ class OutputController: UIViewController,OutputInterface {
 			return display.text!
 		}
 		set{
-			display.text = newValue.description
+			display.text = newValue
 		}
 	}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
+	func display(_ result: String) {
+		displayValue = result
 	}
 	
 	

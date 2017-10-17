@@ -107,6 +107,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="F64-RA-vKs"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-QH-vPO">
                                                 <rect key="frame" x="73.666666666666657" y="0.0" width="72.666666666666657" height="68"/>
@@ -117,6 +120,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="jrP-RQ-7Zw"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-L2-AKw">
                                                 <rect key="frame" x="147.33333333333337" y="0.0" width="72.666666666666657" height="68"/>
@@ -127,6 +133,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Ob0-X0-Hub"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ6-c1-oih">
                                                 <rect key="frame" x="221.00000000000003" y="0.0" width="72.666666666666714" height="68"/>
@@ -137,6 +146,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="vf6-Gw-Caf"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLk-vc-SlI">
                                                 <rect key="frame" x="294.66666666666669" y="0.0" width="73" height="68"/>
@@ -147,6 +159,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="ovQ-S3-J9m"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSQ-Ys-UCI">
                                                 <rect key="frame" x="368.66666666666669" y="0.0" width="72.666666666666629" height="68"/>
@@ -157,6 +172,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="DmP-7D-Q22"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-wW-SkO">
                                                 <rect key="frame" x="442.33333333333326" y="0.0" width="72.666666666666742" height="68"/>
@@ -166,7 +184,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="WGy-OR-2Cb"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="wYg-pe-jbS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-X8-4fh">
@@ -177,7 +195,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="NqX-3F-m9d"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="iyC-Lo-u8x"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rru-zp-V2z">
@@ -188,7 +206,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="poN-x7-igK"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="ePe-iz-8sn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq9-ev-O0x">
@@ -199,7 +217,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="5CP-PE-ScW"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="dwB-si-tme"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -216,6 +234,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gEz-fC-Nxd"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRj-7z-aoR">
                                                 <rect key="frame" x="73.666666666666657" y="0.0" width="72.666666666666657" height="68.333333333333343"/>
@@ -226,6 +247,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Etp-Kb-7Xj"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSg-0q-ajA">
                                                 <rect key="frame" x="147.33333333333337" y="0.0" width="72.666666666666657" height="68.333333333333343"/>
@@ -236,6 +260,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="XhV-3J-gYm"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRL-Fo-G3F">
                                                 <rect key="frame" x="221.00000000000003" y="0.0" width="72.666666666666714" height="68.333333333333343"/>
@@ -246,6 +273,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gpl-46-cmy"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opN-jk-QGc">
                                                 <rect key="frame" x="294.66666666666669" y="0.0" width="73" height="68.333333333333343"/>
@@ -256,6 +286,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="mOA-Ro-IfC"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNv-Kj-AkC">
                                                 <rect key="frame" x="368.66666666666669" y="0.0" width="72.666666666666629" height="68.333333333333343"/>
@@ -266,6 +299,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gOW-lt-2bJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4t-yE-bcj">
                                                 <rect key="frame" x="442.33333333333326" y="0.0" width="72.666666666666742" height="68.333333333333343"/>
@@ -275,7 +311,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Ykx-xI-vS8"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="oXI-lb-XK2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-DS-coJ">
@@ -286,7 +322,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="rL4-O4-KIE"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="S3Y-Ax-j1v"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4K-mJ-7jl">
@@ -297,7 +333,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Sw1-HV-ZZO"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="EBs-rR-yyy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYk-GH-1wI">
@@ -308,7 +344,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="egb-UI-dUP"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="5ef-9E-0R1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -325,6 +361,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="zdZ-c9-yH8"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR2-Rn-Pu4">
                                                 <rect key="frame" x="73.666666666666657" y="0.0" width="72.666666666666657" height="68"/>
@@ -335,6 +374,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gT0-Kp-9Jm"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6f-Ea-b8i">
                                                 <rect key="frame" x="147.33333333333337" y="0.0" width="72.666666666666657" height="68"/>
@@ -345,6 +387,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Hve-tI-e7Y"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehX-Ip-I4K">
                                                 <rect key="frame" x="221.00000000000003" y="0.0" width="72.666666666666714" height="68"/>
@@ -355,6 +400,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Exp-tm-M5m"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zva-76-0ap">
                                                 <rect key="frame" x="294.66666666666669" y="0.0" width="73" height="68"/>
@@ -365,6 +413,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="5Au-8R-fDe"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHy-ge-3zX">
                                                 <rect key="frame" x="368.66666666666669" y="0.0" width="72.666666666666629" height="68"/>
@@ -375,6 +426,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Cyu-Ap-HeZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkF-1R-lcb">
                                                 <rect key="frame" x="442.33333333333326" y="0.0" width="72.666666666666742" height="68"/>
@@ -384,7 +438,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="WQo-bs-mbH"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Fci-oP-SuW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRl-3O-0NE">
@@ -395,7 +449,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="WcP-9X-pBi"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="K30-VC-rMV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du6-CW-V3s">
@@ -406,7 +460,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="6rF-Qp-iL1"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="0bp-3b-KZN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBV-ph-REf">
@@ -417,7 +471,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gNY-Yp-4rM"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="9Y4-KJ-LmJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -434,6 +488,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="wXh-Pe-HV0"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfT-Uh-crY">
                                                 <rect key="frame" x="73.666666666666657" y="0.0" width="72.666666666666657" height="68.333333333333343"/>
@@ -444,6 +501,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="d2o-Bp-FeZ"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE0-L2-GYM">
                                                 <rect key="frame" x="147.33333333333337" y="0.0" width="72.666666666666657" height="68.333333333333343"/>
@@ -454,6 +514,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Abt-8b-8W0"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpf-bc-V0D">
                                                 <rect key="frame" x="221.00000000000003" y="0.0" width="72.666666666666714" height="68.333333333333343"/>
@@ -464,6 +527,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="VQe-er-zGj"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mm-aU-x1O">
                                                 <rect key="frame" x="294.66666666666669" y="0.0" width="73" height="68.333333333333343"/>
@@ -474,6 +540,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="VjP-fb-P7H"/>
+                                                </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-u8-d0f">
                                                 <rect key="frame" x="368.66666666666669" y="0.0" width="72.666666666666629" height="68.333333333333343"/>
@@ -484,6 +553,9 @@
                                                 </state>
                                                 <variation key="heightClass=compact" hidden="NO"/>
                                                 <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="MqU-DY-ZTP"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWZ-I2-pFr">
                                                 <rect key="frame" x="442.33333333333326" y="0.0" width="72.666666666666742" height="68.333333333333343"/>
@@ -493,7 +565,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="27m-Ef-yeU"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="GK9-T7-PY3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD2-zj-2ci">
@@ -504,7 +576,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="dsj-eK-hLR"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="3fM-Y3-QZK"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fly-Am-4Jj">
@@ -523,7 +595,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="fxi-mo-w44"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="bOL-k4-krN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiK-bF-odT">
@@ -542,7 +614,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="8Bt-Eo-lph"/>
+                                                    <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="56t-Vp-JNz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -562,6 +634,9 @@
                                                         </state>
                                                         <variation key="heightClass=compact" hidden="NO"/>
                                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="shS-Pl-0jP"/>
+                                                        </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGK-y6-ifU">
                                                         <rect key="frame" x="73.666666666666657" y="0.0" width="72.666666666666657" height="68"/>
@@ -572,6 +647,9 @@
                                                         </state>
                                                         <variation key="heightClass=compact" hidden="NO"/>
                                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="px4-F9-F40"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <variation key="heightClass=compact" hidden="NO"/>
@@ -589,6 +667,9 @@
                                                         </state>
                                                         <variation key="heightClass=compact" hidden="NO"/>
                                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="sy9-5h-40E"/>
+                                                        </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szp-Uw-omy">
                                                         <rect key="frame" x="73.666666666666657" y="0.0" width="72.666666666666686" height="68"/>
@@ -599,6 +680,9 @@
                                                         </state>
                                                         <variation key="heightClass=compact" hidden="NO"/>
                                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="5UW-GT-AEU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <variation key="heightClass=compact" hidden="NO"/>
@@ -616,6 +700,9 @@
                                                         </state>
                                                         <variation key="heightClass=compact" hidden="NO"/>
                                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="h1p-5x-xgE"/>
+                                                        </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxs-wj-EdD">
                                                         <rect key="frame" x="74" y="0.0" width="72.666666666666629" height="68"/>
@@ -626,6 +713,9 @@
                                                         </state>
                                                         <variation key="heightClass=compact" hidden="NO"/>
                                                         <variation key="heightClass=regular-widthClass=regular" hidden="NO"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="aKH-6e-iBL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <variation key="heightClass=compact" hidden="NO"/>
@@ -643,7 +733,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="aeb-ew-KWw"/>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="gyy-1b-BCe"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -659,7 +749,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="digitPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="zv2-g8-I0m"/>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="Url-65-amL"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXM-VP-rHK">
@@ -670,7 +760,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="operationPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="ohj-Kl-gmP"/>
+                                                            <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="S3i-II-U3J"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
