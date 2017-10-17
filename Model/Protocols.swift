@@ -46,6 +46,7 @@ enum Function: String {
 	case ex      = "eˣ"
 	case x10      = "10ˣ"
 	case y_root_x = "ʸ√x"
+	case root3_x = "³√x"
 	
 }
 

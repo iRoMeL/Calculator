@@ -52,7 +52,8 @@ class CalculatorBrain:CalculatorInterface {
 		"eˣ"		: (prec: 5, rAssoc: true),
 		"xʸ"		: (prec: 4, rAssoc: true),
 		"10ˣ"	: (prec: 5, rAssoc: true),
-		"ʸ√x"	: (prec: 5, rAssoc: true),
+		"ʸ√x"	: (prec: 5, rAssoc: false),
+		"³√x"	: (prec: 5, rAssoc: false),
 		"ln"	: (prec: 5, rAssoc: true),
 		"log₁₀"	: (prec: 5, rAssoc: true),
 		"+"		: (prec: 2, rAssoc: false),
@@ -212,6 +213,7 @@ class CalculatorBrain:CalculatorInterface {
 					|| token == Function.cos.rawValue
 					|| token == Function.ln.rawValue
 					|| token == Function.sqrt.rawValue
+					|| token == Function.root3_x.rawValue
 					|| token == Function.tan.rawValue
 					|| token == Function.sinh.rawValue
 					|| token == Function.cosh.rawValue
@@ -255,6 +257,8 @@ class CalculatorBrain:CalculatorInterface {
 						stack += [String( pow(operand, 2))]
 					case Function.x3.rawValue:
 						stack += [String( pow(operand, 3))]
+					case Function.root3_x.rawValue:
+						stack += [String( pow(operand, 1/3))]
 					case Function.x10.rawValue:
 						stack += [String( pow(10, operand))]
 					case Function.ex.rawValue:
@@ -292,7 +296,7 @@ class CalculatorBrain:CalculatorInterface {
 							stack += [String(pow(firstOperand,secondOperand))]
 						case Function.y_root_x.rawValue:
 							if secondOperand != 0.0 {
-								stack += [String(pow(firstOperand,-secondOperand))]
+								stack += [String(pow(firstOperand,1/secondOperand))]
 							} else {
 								stack += [String(0.0)]
 							}
