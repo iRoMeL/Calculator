@@ -225,7 +225,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dy5-Dk-6NA">
                                         <rect key="frame" x="0.0" y="69" width="736" height="68.333333333333343"/>
                                         <subviews>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF6-NF-eRB">
+                                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF6-NF-eRB">
                                                 <rect key="frame" x="0.0" y="0.0" width="72.666666666666671" height="68.333333333333343"/>
                                                 <color key="backgroundColor" red="0.83922946450000002" green="0.83923208709999997" blue="0.83923774959999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
@@ -544,7 +544,7 @@
                                                     <action selector="buttonPressed:" destination="skP-gr-hLx" eventType="touchUpInside" id="VjP-fb-P7H"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-u8-d0f">
+                                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-u8-d0f">
                                                 <rect key="frame" x="368.66666666666669" y="0.0" width="72.666666666666629" height="68.333333333333343"/>
                                                 <color key="backgroundColor" red="0.83922946450000002" green="0.83923208709999997" blue="0.83923774959999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
@@ -625,7 +625,7 @@
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sUB-Dj-f0Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="146.33333333333334" height="68"/>
                                                 <subviews>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTf-GF-13t">
+                                                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTf-GF-13t">
                                                         <rect key="frame" x="0.0" y="0.0" width="72.666666666666671" height="68"/>
                                                         <color key="backgroundColor" red="0.83922946450000002" green="0.83923208709999997" blue="0.83923774959999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>

@@ -89,8 +89,13 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 			
 			//забираєм нулі
 			if (digit == "0") && (output.displayValue == "0") { return }
+			if (digit == ".") && ((output.displayValue == "0") || (output.displayValue == "")) { output.displayValue = "0."; return }
 			if (digit != ".") && (output.displayValue == "0") { output.displayValue = digit ; return }
 			if (digit == ".") && (output.displayValue.characters.contains(".")) { return }
+			if (digit == "±") && ((output.displayValue == ".") || (output.displayValue == "0") || (output.displayValue == "")){ return }
+			if (digit == "%") && ((output.displayValue == ".") || (output.displayValue == "0") || (output.displayValue == "")){ return }
+			
+			print(output.displayValue)
 			
 			//міняємо знак
 			if (digit == "±")  {
@@ -123,6 +128,10 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 		} else {
 			if  (digit == "±")   {return}
 			if  (digit == "%")   {return}
+			if  (digit == ".") && ((output.displayValue == "0") || (output.displayValue == ""))
+			{ output.displayValue = "0."
+				userEnteringNumber = true
+				return }
 			
 			output.displayValue = digit
 			userEnteringNumber = true
@@ -135,6 +144,8 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 	
 	func memoryPressed(_ symbol: String) {
 		
+		userEnteringNumber = false
+		
 		switch symbol {
 		case "AC":
 			brain.memory(.allClean,nil)
@@ -143,7 +154,7 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 		case "m+":
 			brain.memory(.memoryAdd,Double(output.displayValue))
 		case "m-":
-			brain.memory(.memoryRemove,nil)
+			brain.memory(.memoryClean,nil)
 		case "mc":
 			brain.memory(.memoryClean,nil)
 		case "mr":
@@ -151,7 +162,7 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 		default:
 			break
 		}
-		
+		//output.displayValue = "0"
 		
 	}
 	
@@ -162,6 +173,7 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 			brain.digit(Double(output.displayValue)!)
 			userEnteringNumber = false
 		}
+		
 		
 		switch operation {
 		case "+":
@@ -228,8 +240,6 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 			brain.function(.y_root_x)
 		case "x!":
 			brain.function(.fact)
-			
-			//case "sin","cos","tan","sinh","cosh","tanh","²√x","1/x","x²","x³","xʸ","eˣ","10ˣ","ln","ʸ√x","log₁₀":
 		default:
 			break
 		}
