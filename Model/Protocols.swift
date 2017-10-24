@@ -16,14 +16,14 @@ import Foundation
 
 let numbers : Set<String> = ["0","1","2","3","4","5","6","7","8","9"]
 
-let operations: Set<String> = ["+","-","x","/"]
-                               //"√","sin","cos","tan","sinh","cosh","tanh","ln","log","x!","%","+/-","1/x","x²","x³","xʸ","eˣ","10ˣ","ʸ√x","³√x"]
+let operations: Set<String> = ["+","-","*","/"]
+let functions: Set<String> = ["√","sin","cos","tan","sinh","cosh","tanh","ln","log","x!","%","+/-","1/x","x²","x³","xʸ","eˣ","10ˣ","ʸ√x","³√x"]
 
 // MARK: Enums
 enum Operation: String {
 	case plus  = "+"
 	case minus = "-"
-	case mult  = "x"
+	case mult  = "*"
 	case div   = "/"
 	case exp   = "^"
 	case equal = "="

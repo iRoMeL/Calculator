@@ -24,6 +24,9 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 				self.output.display(result!.clean)
 			}
 			
+			if error != nil {
+				print(error!)
+			}
 			
 		})
 		
@@ -54,10 +57,8 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 		
 		switch symbol {
 		case "0","1","2","3","4","5","6","7","8","9",".","±","%":
-			//is number or dot
 			numberPressed(symbol)
 		case "+","−","÷","×","^","=":
-			//base operation
 			operationPressed(symbol)
 		case "π":
 			constantPressed(Double.pi)
@@ -162,7 +163,6 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 		default:
 			break
 		}
-		//output.displayValue = "0"
 		
 	}
 	

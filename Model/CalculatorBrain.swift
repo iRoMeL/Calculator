@@ -15,7 +15,7 @@ class CalculatorBrain:CalculatorInterface {
 	private var equation: String 		= "0" //вираз для розрахунку
 	private var braketMode:Bool			=  false
     private var memory:Double?
-	private var equalPressed			= false
+	private var equalPressed			=  false
 	private var lastDigit: String?
 	private var lastOperation:String?
 	
@@ -62,7 +62,7 @@ class CalculatorBrain:CalculatorInterface {
 		"sinh"	: (prec: 5, rAssoc: true),
 		"cosh"	: (prec: 5, rAssoc: true),
 		"tanh"	: (prec: 5, rAssoc: true),
-		"x"		: (prec: 3, rAssoc: false),
+		"*"		: (prec: 3, rAssoc: false),
 		"/"		: (prec: 3, rAssoc: false),
 		"1/x"	: (prec: 5, rAssoc: true),
 		"x²"	: (prec: 5, rAssoc: true),
@@ -135,10 +135,11 @@ class CalculatorBrain:CalculatorInterface {
 		
 		if !equalPressed && inputStack.count >= 2 {
 			//digit
+			
 			let lastSymbol 	= inputStack[inputStack.count - 1]
 			let firstSymbol = inputStack[inputStack.count - 2]
 			
-			
+
 			if operations.contains(lastSymbol) {
 				lastOperation = lastSymbol
 			} else
@@ -151,8 +152,15 @@ class CalculatorBrain:CalculatorInterface {
 			
 			if inputStack.count == 2 {
 				if lastOperation != nil && lastDigit != nil {
-					inputStack.append(lastDigit!)
+					if operations.contains(lastOperation!)
+						&& lastDigit!>="0" && lastDigit!<="9"
+					{
+						inputStack.append(lastDigit!)
+					}
+					
 				}
+				
+				
 			}
 			
 	
@@ -162,8 +170,13 @@ class CalculatorBrain:CalculatorInterface {
 		
 		
 		if equalPressed && lastOperation != nil && lastDigit != nil {
-			inputStack.append(lastOperation!)
-			inputStack.append(lastDigit!)
+			if operations.contains(lastOperation!)
+				&& lastDigit!>="0" && lastDigit!<="9"
+			{
+				inputStack.append(lastOperation!)
+				inputStack.append(lastDigit!)
+			}
+			
 		}
 		
 		
@@ -187,12 +200,16 @@ class CalculatorBrain:CalculatorInterface {
 		resultClosure(0,nil)
 		braketMode 		= false
 		equalPressed = false
-		
+		lastDigit	= nil
+		lastOperation = nil
 	}
 	
 	
 	func function(_ function: Function) {
 		equalPressed = false
+		lastDigit	= nil
+		lastOperation = nil
+		
 		inputStack.append(String(function.rawValue))
 		
 		if !braketMode {
@@ -236,38 +253,40 @@ class CalculatorBrain:CalculatorInterface {
 	
 	
 	func rpn(tokens: [String]) -> [String] {
-		var rpn		: [String] = [] // equation in rpn
-		var stack 	: [String] = [] // holds operators and left parenthesis
+		
+		var rpn		: [String] = [] //
+		var stack 	: [String] = [] // стек операторів і лівих дужок
 		
 		for tok in tokens {
 			switch tok {
 			case "(":
-				stack += [tok] // push "(" to stack
+				stack += [tok] // додаємо "(" до стеку
 			case ")":
 				while !stack.isEmpty {
-					let op = stack.removeLast() // pop item from stack
+					let op = stack.removeLast() // повертаємо елемент із стеку
 					if op == "(" {
-						break // discard "("
+						break // опускаємо "("
 					} else {
-						rpn += [op] // add operator to result
+						rpn += [op] // додаємо оператор до результату
 					}
 				}
 			default:
-				if let o1 = opa[tok] { // token is an operator?
+				if let o1 = opa[tok] { // елемент == оператор
 					for op in stack.reversed() {
 						if let o2 = opa[op] {
-							if !(o1.prec > o2.prec || (o1.prec == o2.prec && o1.rAssoc)) {
-								// top item is an operator that needs to come off
-								rpn += [stack.removeLast()] // pop and add it to the result
+							if !(o1.prec > o2.prec
+								|| (o1.prec == o2.prec && o1.rAssoc)) {
+								// другий оператор має більший проритет
+								rpn += [stack.removeLast()] // забираємо зі стреку і додаємо в результат
 								continue
 							}
 						}
 						break
 					}
 					
-					stack += [tok] // push operator (the new one) to stack
-				} else { // token is not an operator
-					rpn += [tok] // add operand to result
+					stack += [tok] // додаємо оператор в стек
+				} else { //елемент не оператор
+					rpn += [tok] // додаємо  в результат
 				}
 			}
 		}
@@ -283,15 +302,16 @@ class CalculatorBrain:CalculatorInterface {
 	
 	
 	func calculate() -> Double {
-		let tokens = rpn(tokens: parseInfix(e: equation )) // array for input symbols
-		var stack = [String]()
+		
+		let tokens = rpn(tokens: parseInfix(e: equation )) // масив символів у rpn
+		var stack = [String]() // масив чисел
 		
 		print("rpn - \(tokens) ")
 		
 		for token in tokens {
 			
 			if Double(token) != nil  {
-				stack += [token] // if symbol is number  - add to stack
+				stack += [token] // якщо символ є числом - добавляєм в стек
 				
 			} else if !stack.isEmpty &&
 				(token == Function.sin.rawValue
@@ -314,6 +334,7 @@ class CalculatorBrain:CalculatorInterface {
 					
 					
 				) {
+				//якщо символ є функцією і стек не пустий
 				if let  operand = Double((stack.removeLast())) {
 					switch token {
 					case Function.sin.rawValue:
@@ -325,7 +346,11 @@ class CalculatorBrain:CalculatorInterface {
 					case Function.log.rawValue:
 						stack += [String(log10(operand))]
 					case Function.sqrt.rawValue:
-						stack += [String(sqrt(operand))]
+						if operand < 0.0 {
+							stack += [String(sqrt(operand))]
+						} else {
+							stack += [String(0.0)]
+						}
 					case Function.tan.rawValue:
 						stack += [String(tan(operand))]
 					case Function.sinh.rawValue:
@@ -350,11 +375,9 @@ class CalculatorBrain:CalculatorInterface {
 						stack += [String( pow(M_E, operand))]
 					case Function.fact.rawValue:
 						
-						var int_number = UInt64(operand)
+						var int_number = abs(Double(operand).rounded())
 						
-						//Unsigned INT64 MAX 64 18,446,744,073,709,551,615. While 21! = 51,090,942,171,709,440,000.
-						
-						if int_number >= 20 {int_number = 20}
+						if int_number >= 170 {int_number = 170}
 						
 						stack += [String( factorial(int_number))]
 						
@@ -375,7 +398,7 @@ class CalculatorBrain:CalculatorInterface {
 							if secondOperand != 0.0 {
 								stack += [String(firstOperand / secondOperand)]
 							} else {
-								stack += [String(0.0)]
+								stack += [String(0.0)] //ділення на ноль
 							}
 							
 						case Operation.mult.rawValue:
@@ -388,7 +411,7 @@ class CalculatorBrain:CalculatorInterface {
 							if secondOperand != 0.0 {
 								stack += [String(pow(firstOperand,1/secondOperand))]
 							} else {
-								stack += [String(0.0)]
+								stack += [String(0.0)] //ділення на ноль
 							}
 							
 						default:
@@ -401,20 +424,21 @@ class CalculatorBrain:CalculatorInterface {
 				
 			}
 		}
+		
 		if !stack.isEmpty {
 			return Double(stack.removeLast())!
 		} else {
-			return 0
+			return 0 // у випадку якщо стек пустий
 		}
 		
 	}
 	
-	private func factorial(_ n: UInt64) -> UInt64 {
-		if n == 0 {
-			return 1
+	private func factorial(_ n: Double) -> Double {
+		if n == 0.0 {
+			return 1.0
 		}
 		else {
-			return n * factorial(n - 1)
+			return n * factorial(n - 1.0)
 		}
 	}
 	
