@@ -346,7 +346,7 @@ class CalculatorBrain:CalculatorInterface {
 					case Function.log.rawValue:
 						stack += [String(log10(operand))]
 					case Function.sqrt.rawValue:
-						if operand < 0.0 {
+						if operand >= 0.0 {
 							stack += [String(sqrt(operand))]
 						} else {
 							stack += [String(0.0)]
