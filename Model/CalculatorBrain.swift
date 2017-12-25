@@ -69,12 +69,15 @@ class CalculatorBrain:CalculatorInterface {
 		"x!"	: (prec: 5, rAssoc: true),
 		"x³"	: (prec: 5, rAssoc: true),
 		"eˣ"		: (prec: 5, rAssoc: true),
+		"2ˣ"		: (prec: 5, rAssoc: true),
 		"xʸ"		: (prec: 4, rAssoc: true),
 		"10ˣ"	: (prec: 5, rAssoc: true),
 		"ʸ√x"	: (prec: 5, rAssoc: false),
 		"³√x"	: (prec: 5, rAssoc: false),
 		"ln"	: (prec: 5, rAssoc: true),
 		"log₁₀"	: (prec: 5, rAssoc: true),
+		"log₂"	: (prec: 5, rAssoc: true),
+		"Deg"	: (prec: 5, rAssoc: true),
 		"+"		: (prec: 2, rAssoc: false),
 		"-"		: (prec: 2, rAssoc: false),
 	
@@ -327,10 +330,13 @@ class CalculatorBrain:CalculatorInterface {
 					|| token == Function.x2.rawValue
 					|| token == Function.x3.rawValue
 					|| token == Function.log.rawValue
+					|| token == Function.log2.rawValue
 					|| token == Function.fact.rawValue
 					|| token == Function.x10.rawValue
 					|| token == Function.ex.rawValue
+					|| token == Function.x2x.rawValue
 					|| token == Function.fact.rawValue
+					|| token == Function.Deg.rawValue
 					
 					
 				) {
@@ -345,6 +351,8 @@ class CalculatorBrain:CalculatorInterface {
 						stack += [String(log(operand))]
 					case Function.log.rawValue:
 						stack += [String(log10(operand))]
+					case Function.log2.rawValue:
+						stack += [String(log2(operand))]
 					case Function.sqrt.rawValue:
 						if operand >= 0.0 {
 							stack += [String(sqrt(operand))]
@@ -373,6 +381,8 @@ class CalculatorBrain:CalculatorInterface {
 						stack += [String( pow(10, operand))]
 					case Function.ex.rawValue:
 						stack += [String( pow(M_E, operand))]
+					case Function.x2x.rawValue:
+						stack += [String( pow(2, operand))]
 					case Function.fact.rawValue:
 						
 						var int_number = abs(Double(operand).rounded())
@@ -380,8 +390,8 @@ class CalculatorBrain:CalculatorInterface {
 						if int_number >= 170 {int_number = 170}
 						
 						stack += [String( factorial(int_number))]
-						
-						
+					case Function.Deg.rawValue:
+						stack += [String( operand * 180.0 / Double.pi)]
 					default:
 						break
 					}

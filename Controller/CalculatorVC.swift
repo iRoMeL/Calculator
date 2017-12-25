@@ -66,7 +66,7 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 			constantPressed(M_E)
 		case "Rand":
 			constantPressed(Double.random0to1())
-		case "sin","cos","tan","sinh","cosh","tanh","²√x","³√x","1/x","x²","x³","xʸ","eˣ","10ˣ","ln","ʸ√x","log₁₀","x!":
+		case "sin","cos","tan","sinh","cosh","tanh","²√x","³√x","1/x","x²","x³","xʸ","eˣ","2ˣ","10ˣ","ln","ʸ√x","log₁₀","log₂","x!","Deg":
 			functionPressed(symbol)
 		case "(",")":
 			utilityPressed(symbol)
@@ -228,10 +228,14 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 			brain.function(.x3)
 		case "log₁₀":
 			brain.function(.log)
+		case "log₂":
+			brain.function(.log2)
 		case "ln":
 			brain.function(.ln)
 		case "eˣ":
 			brain.function(.ex)
+		case "2ˣ":
+			brain.function(.x2x)
 		case "xʸ":
 			brain.function(.xy)
 		case "10ˣ":
@@ -240,6 +244,8 @@ class CalculatorVC: UIViewController,CalculatorDelegate {
 			brain.function(.y_root_x)
 		case "x!":
 			brain.function(.fact)
+		case "Deg":
+			brain.function(.Deg)
 		default:
 			break
 		}

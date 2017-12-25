@@ -17,7 +17,7 @@ import Foundation
 let numbers : Set<String> = ["0","1","2","3","4","5","6","7","8","9"]
 
 let operations: Set<String> = ["+","-","*","/"]
-let functions: Set<String> = ["√","sin","cos","tan","sinh","cosh","tanh","ln","log","x!","%","+/-","1/x","x²","x³","xʸ","eˣ","10ˣ","ʸ√x","³√x"]
+let functions: Set<String> = ["√","sin","cos","tan","sinh","cosh","tanh","ln","log","log₂","x!","%","+/-","1/x","x²","x³","xʸ","eˣ","2ˣ","10ˣ","ʸ√x","³√x","Deg"]
 
 // MARK: Enums
 enum Operation: String {
@@ -39,6 +39,7 @@ enum Function: String {
 	case tanh    = "tanh"
 	case ln      = "ln"
 	case log     = "log"
+	case log2    = "log₂"
 	case fact    = "x!"
 	case percent = "%"
 	case sign    = "+/-"
@@ -47,9 +48,11 @@ enum Function: String {
 	case x3      = "x³"
 	case xy      = "xʸ"
 	case ex      = "eˣ"
+	case x2x	 = "2ˣ"
 	case x10      = "10ˣ"
 	case y_root_x = "ʸ√x"
 	case root3_x = "³√x"
+	case Deg	 = "Deg"
 	
 }
 
